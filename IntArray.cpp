@@ -4,23 +4,23 @@
 
 using namespace std;
 
-class IntArray {
+class IntArray { //class to define an integer based Array
 public:
         IntArray(int size);
         ~IntArray();
         int & operator[](int i) const;
         int size() const;
         void fill(int k);
-        int * begin() {
+        int * begin() { //returns the first number of the array
                 return data;
         }
-        int * end(){
+        int * end(){ //returns the last number of the array
                 return data + len;
         }
 
 
 private:
-        int len;
+        int len; 
         int * data;
 };
 
@@ -39,13 +39,13 @@ int & IntArray::operator[](int i) const {
 int IntArray::size() const {
         return len;
 }
-void IntArray::fill(int k) {
+void IntArray::fill(int k) {  //fills the entire array with a given number
         for(int i = 0; i < len; i++)
                 data[i] = k;
 }
 
 
-int main(int argc, char * args[]) {
+int main(int argc, char * args[]) { //test function
         IntArray a(3);
         a[0] = 10;
         a[1] = 11;
