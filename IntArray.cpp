@@ -30,7 +30,7 @@ IntArray::IntArray(int size) {
 }
 
 IntArray::~IntArray() {
-        data = nullptr;
+        data = NULL;
         delete data;
 }
 int & IntArray::operator[](int i) const {
