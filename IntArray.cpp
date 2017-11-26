@@ -17,8 +17,6 @@ public:
         int * end(){ //returns the last number of the array
                 return data + len;
         }
-
-
 private:
         int len; 
         int * data;
@@ -43,36 +41,50 @@ void IntArray::fill(int k) {  //fills the entire array with a given number
         for(int i = 0; i < len; i++)
                 data[i] = k;
 }
-
-
-int main(int argc, char * args[]) { //test function
-        IntArray a(3);
-        a[0] = 10;
-        a[1] = 11;
-        a[2] = 12;
-        assert(a[0] == 10);
-        assert(a[1] == 11);
-        assert(a[2] == 12);
-        assert(a.size() == 3);
-        a.fill(5);
-        assert(a[0] == 5);
-        assert(a[1] == 5);
-        assert(a[2] == 5);
-        a[0] = 3;
-        a[1] = 1;
-        a[2] = 2;
-        sort(a.begin(), a.end());
-        assert(a[0] == 1);
-        assert(a[1] == 2);
-        assert(a[2] == 3);
-        int * it = a.begin();
-        assert(*it == 1);
-        ++it;
-        assert(*it == 2);
-        ++it;
-        assert(*it == 3);
-        ++it;
-        assert(it == a.end());
-
+void test1(){ //test for creating array
+	IntArray a(3);
+	a[0] = 10;
+	a[1] = 11;
+	a[2] = 12;
+	assert(a.size() == 3);
+}
+void test2(){ //tests fill function
+	IntArray b(5);
+	b.fill(7);
+	assert(b[0] == 7);
+	assert(b[1] == 7);
+	assert(b[2] == 7);
+	assert(b[3] == 7);
+	assert(b[4] == 7);
+}
+void test3(){ //tests sort
+	IntArray c(3);
+	c[0] = 3;
+	c[1] = 1;
+	c[2] = 2;
+	sort(c.begin(), c.end());
+	assert(c[0] == 1);
+	assert(c[1] == 2);
+	assert(c[2] == 3);
+}
+void test4(){ //tests pointer to the array
+	IntArray d(3);
+	d[0] = 1;
+	d[1] = 2;
+	d[2] = 3;
+	int * it = d.begin();
+	assert(*it == 1);
+	++it;
+	assert(*it == 2);
+	++it;
+	assert(*it == 3);
+	++it;
+	assert(it == d.end());
+}
+int main(int argc, char * args[]) {
+	test1();
+	test2();
+	test3();
+	test4();
         cout << "All Tests Passed." << endl;
 }
