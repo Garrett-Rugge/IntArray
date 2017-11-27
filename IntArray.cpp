@@ -67,7 +67,7 @@ void test3(){ //tests sort
 	assert(c[1] == 2);
 	assert(c[2] == 3);
 }
-void test4(){ //tests pointer to the array
+void test4(){ //tests pointer to the array, begin and end function
 	IntArray d(3);
 	d[0] = 1;
 	d[1] = 2;
